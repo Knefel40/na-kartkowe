@@ -521,3 +521,126 @@ public class Main {
         }
     }
 }
+
+
+
+import java.util.ArrayList;
+
+public class Main {
+
+    public static ArrayList<Integer> fibonaci(){
+        ArrayList<Integer> fibo = new ArrayList<>();
+        fibo.add(0);
+        fibo.add(1);
+        int index = 2;
+        while(fibo.size()<40){
+            fibo.add(fibo.get(index-1)+fibo.get(index-2));
+            index++;
+        }
+        System.out.println(fibo);
+        return fibo;
+    }
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+    }
+
+}\\\
+
+
+
+
+
+@@ -14,8 +14,34 @@ public static ArrayList<Integer> fibonaci(){
+        System.out.println(fibo);
+        return fibo;
+    }
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+
+    public static Integer wyszukiwanieBinarne(ArrayList<Integer> listawysz, int szukana) {
+        int liczba = 0;
+        int poczatek = 0;
+        int koniec = listawysz.size() - 1;
+
+        while (koniec - poczatek > 1) {
+            int srodek = (poczatek + koniec) / 2;
+            if (listawysz.get(srodek) > szukana) {
+                koniec = srodek;
+            } else {
+                poczatek = srodek;
+            }
+        }
+        int roznica1 = szukana - listawysz.get(poczatek);
+        int roznica2 = listawysz.get(koniec) - szukana;
+        if (roznica1 > roznica2) {
+            liczba = listawysz.get(koniec);
+        } else {
+            liczba = listawysz.get(koniec);
+        }
+        return liczba;
+    }
+
+}
+        public static void main (String[]args){
+            System.out.println("Hello world!");
+            ArrayList<Integer> fibki = fibonaci();
+            System.out.println(wyszukiwanieBinarne(fibki, 54));
+            System.out.println("test");        }
+
+    }
+    
+    
+    
+    
+           return liczba;
+    }
+        public static boolean czyPalidrom(String slowo) {
+            return true;
+        String slowoOdkonca = "";
+            for (int i = 0; i <slowo.length() ; i++) {
+                slowoOdkonca = slowo.charAt(i)+slowoOdkonca;
+            }
+            if(slowo.equals(slowoOdkonca)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        public static void main (String[]args){
+            System.out.println("Hello world!");
+            ArrayList<Integer> fibki = fibonaci();
+            System.out.println(wyszukiwanieBinarne(fibki, 54));
+            System.out.println(czyPalidrom("kajak"));
+        }
+
+    }
+    
+    
+    
+    
+                 return false;
+            }
+        }
+
+        public static Integer liczbaPalindromiczna(Integer liczba){
+        Integer pomoc = liczba;
+            Integer pomoc2 = liczba;
+        while(!czyPalidrom(liczba.toString())){
+            liczba++;
+        }
+        while(!czyPalidrom(pomoc2.toString())){
+            pomoc2--;
+        }
+        return liczba - pomoc > pomoc-pomoc2 ? pomoc2: liczba;
+        }
+
+        public static void main (String[]args){
+            System.out.println("Hello world!");
+            ArrayList<Integer> fibki = fibonaci();
+            System.out.println(wyszukiwanieBinarne(fibki, 54));
+            System.out.println(czyPalidrom("kajak"));
+            System.out.println(liczbaPalindromiczna(790));
+        }
+
+    }
